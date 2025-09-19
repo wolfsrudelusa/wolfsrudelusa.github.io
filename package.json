@@ -1,8 +1,8 @@
 {
-	"name": "thewolfsrudel.github.io",
+	"name": "wolfsrudelusa.github.io",
 	"version": "1.0.0",
-	"author": "Wolfsrudel, USA",
-	"repository": "https://github.com/thewolfsrudel/thewolfsrudel.github.io",
+	"author": "Wolfsrudel LLC",
+	"repository": "https://github.com/wolfsrudelusa/wolfsrudelusa.github.io",
 	"license": "MIT",
 	"type": "module",
 	"private": true,
@@ -17,6 +17,7 @@
 	},
 	"dependencies": {
 		"@astrojs/sitemap": "latest",
+		"@vite-pwa/astro": "latest",
 		"astro": "latest"
 	},
 	"devDependencies": {
