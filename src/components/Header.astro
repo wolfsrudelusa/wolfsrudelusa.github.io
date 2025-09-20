@@ -7,6 +7,7 @@ const navLinks = [
 ---
 
 <header>
+	<img href="favicon.svg" />
 	<nav>
 		{navLinks.map(link => <Link url={link.url} name={link.name} />)}
 	</nav>
@@ -15,6 +16,12 @@ const navLinks = [
 <style lang="scss">
 header {
 	padding: 0 12px;
+	display: flex;
+	justify-content: space-between;
+	img {
+		width: 14px;
+		height: 14px;
+	}
 	nav {
 		display: flex;
 		font: 1em sans-serif;
