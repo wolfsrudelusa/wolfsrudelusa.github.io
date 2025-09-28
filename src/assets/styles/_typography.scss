@@ -1,0 +1,93 @@
+@use 'sass:math';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&family=IBM+Plex+Serif&display=swap');
+
+$mono-font: 'IBM Plex Mono', 'Courier New', Courier, monospace !default;
+$sans-font: 'IBM Plex Sans', Arial, Helvetica, sans-serif !default;
+$serif-font: 'IBM Plex Serif', Georgia, 'Times New Roman', Times, serif !default;
+
+$base-font-size: 1rem !default;
+$base-line-height: 1.6 !default;
+
+body, body * {
+	font-family: $serif-font;
+	overflow-wrap: break-word;
+}
+
+// Header content
+h1, h2, h3, h4, h5, h6 {
+	font-family: $sans-font !important;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+h4, h6 {
+	font-style: italic;
+}
+
+@for $i from 1 through 6 {
+	h#{i} {
+		font-size: $base-font-size + 0.125*math.round(0.1607*math.pow($i,2)-2.754*$i+10.7);
+		line-height: $base-line-height - (6 - $i * 0.1);
+	}
+}
+
+// Body content
+body, p {
+	font-size: $base-font-size;
+}
+small {
+	font-size: $base-font-size * 0.75;
+}
+body, p, small {
+	font-family: $serif-font !important;
+	line-height: $base-line-height;
+}
+p {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+a {
+	text-decoration: none;
+	transition: color 200ms;
+	cursor: pointer;
+}
+
+// Lists
+li ul, li ol { margin: 0 1rem; }
+ul { list-style-type: disc; }
+ol { list-style-type: decimal; }
+ol ol { list-style: lower-alpha; }
+ol ol ol { list-style: lower-roman; }
+ol ol ol ol { list-style: lower-alpha; }
+
+// Monospaced content
+pre, code, samp { font-family: $mono-font !important; }
+pre {
+	font-size: 0.875rem;
+	// padding: $padding * 2;
+	overflow: auto;
+}
+pre code {
+	background-color: inherit;
+	border-radius: 0;
+	color: inherit;
+	padding: 0;
+}
+code {
+	// background-color: $silver;
+	border-radius: 3px;
+	font-size: 0.875rem;
+	padding: 0.15em 0.4em;
+}
+hr { border: 0; }
+
+//====================================================
+//  Font Sizing
+//====================================================
+
+.fs-base    { font-size: $base-font-size; }
+.fs-xsmall  { font-size: 50%; }
+.fs-small   { font-size: 75%; }
+.fs-large   { font-size: 125%; }
+.fs-xlarge  { font-size: 150%; }
+.fs-xxlarge { font-size: 175%; }
+.fs-double  { font-size: 200%; }
