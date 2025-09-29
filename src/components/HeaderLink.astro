@@ -9,14 +9,17 @@ const { name, url } = Astro.props;
 <a href={url} class:list={['navLink', {active: url === Astro.url.pathname}]}>{name}</a>
 
 <style lang="scss">
+@use '@assets/styles' as theme;
 .navLink {
 	display: block;
 	flex: 0 0 12ch;
+	font-family: theme.$sans-font;
 	font-size: 14pt;
+	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
 	padding: 1vh;
-	font-weight: bold;
+	color: inherit;
 	transition: all ease-in 100ms;
 	&:hover, &.active {
 		background: linear-gradient(transparent 90%, #fff);

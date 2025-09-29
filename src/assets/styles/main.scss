@@ -12,13 +12,7 @@ body {
 	black; */
 	background-color: #0D1117;
 }
-#pageContent {
-	position: relative;
-	flex: 1 0 100%;
-}
-body > footer {
-	text-align: center;
-}
+
 .section {
 	background-color: #ffffff;
 	width: 100%;
@@ -122,8 +116,6 @@ h1 {
 	overflow: hidden;
 	background-color: aqua;
 }
-
-
 
 nav > button {
 	font-size: 24px;

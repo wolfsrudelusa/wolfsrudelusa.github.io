@@ -17,9 +17,6 @@ const SOCIALS = [
 <footer>
 	<section>
 		<h3>Wolfsrudel LLC</h3>
-		<ul>
-			<a></a>
-		</ul>
 	</section>
 	<section>
 		{LINKS.map(({name, url}) => <a href={url}>{name}</a>)}
@@ -35,6 +32,7 @@ footer {
 	color: theme.get-color('default');
 	background-color: theme.get-color('background');
 	padding: 0 64px;
+	text-align: center;
 	section {
 		padding: 8px;
 		display: flex;
@@ -48,9 +46,7 @@ footer {
 			}
 		}
 	}
-}
-@media only screen and (min-width: 50em) {
-	footer {
+	@media only screen and (min-width: theme.$breakpoint-desktop) {
 		section {
 			flex-flow: row wrap;
 			justify-content: space-around;
