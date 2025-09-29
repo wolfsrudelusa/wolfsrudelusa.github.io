@@ -1,8 +1,15 @@
-$primary-color-1: #0445f1;
-$primary-color-2: #0494f1;
-$primary-color-3: #81ccfa;
-$accent-color-1: #151f26;
-$accent-color-2: #2e3a44;
-$accent-color-3: #eff2f5;
+@use 'sass:list';
+@use 'sass:map';
+
+$light-theme: false;
+$colors: (
+	default: (#000, #fff),
+	foreground: (#0445f1, #0494f1, #81ccfa),
+	background: (#eff2f5, #2e3a44, #151f26),
+);
+
+@function get-color($domain, $n: 1) {
+	@return list.nth(map.get($colors, $domain), $n *(if($light-theme, 1, -1)));
+}
 
 $breakpoint-desktop: 50em;

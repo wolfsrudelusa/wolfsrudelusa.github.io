@@ -7,22 +7,25 @@ const navLinks = [
 ---
 
 <header>
-	<img href="favicon.svg" />
+	<img src="favicon.svg" />
 	<nav>
 		{navLinks.map(link => <Link url={link.url} name={link.name} />)}
 	</nav>
 </header>
 
 <style lang="scss">
+@use '@assets/styles' as theme;
 header {
 	padding: 0 12px;
 	display: flex;
 	justify-content: space-between;
+	background-color: theme.get-color('background');
 	img {
 		width: 14px;
 		height: 14px;
 	}
 	nav {
+		color: theme.get-color('default');
 		display: flex;
 		font: 1em sans-serif;
 		padding: 0 8px;

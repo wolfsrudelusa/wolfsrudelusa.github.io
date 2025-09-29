@@ -2,27 +2,59 @@
 const TODAY = new Date(Date.now());
 const CURRENT_YEAR = TODAY.getFullYear();
 const USER_NAME = 'Wolfsrudel LLC';
+
+const LINKS = [
+	{name: 'Privacy Policy', url: '/legal/privacy'},
+	{name: 'Terms & Conditions', url: '/legal/terms'},
+	{name: 'Disclaimer', url: '/legal/disclaimer'},
+];
+
+const SOCIALS = [
+	
+];
 ---
 
 <footer>
 	<section>
-		<small>&copy; {CURRENT_YEAR} {USER_NAME}</small> | <small>Last updated <time datetime={`${TODAY.getUTCFullYear()}-${TODAY.getUTCMonth()+1}-${TODAY.getUTCDay()+1}`}>{TODAY.toLocaleDateString('en',{year:'numeric',month:'short',day:'numeric'})}</time></small>
+		<h3>Wolfsrudel LLC</h3>
+		<ul>
+			<a></a>
+		</ul>
+	</section>
+	<section>
+		{LINKS.map(({name, url}) => <a href={url}>{name}</a>)}
+	</section>
+	<section>
+		<p><small>&copy; {CURRENT_YEAR} {USER_NAME}</small> | <small>Last updated <time datetime={`${TODAY.getUTCFullYear()}-${TODAY.getUTCMonth()+1}-${TODAY.getUTCDay()+1}`}>{TODAY.toLocaleDateString('en',{year:'numeric',month:'short',day:'numeric'})}</time></small></p>
 	</section>
 </footer>
 
 <style lang="scss">
+@use '@assets/styles' as theme;
 footer {
+	color: theme.get-color('default');
+	background-color: theme.get-color('background');
 	padding: 0 64px;
 	section {
 		padding: 8px;
+		display: flex;
+		flex-flow: column wrap;
+		align-content: space-around;
+		&> a {
+			text-decoration: none;
+			color: inherit;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }
 @media only screen and (min-width: 50em) {
 	footer {
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: space-between;
-		align-items: center;
+		section {
+			flex-flow: row wrap;
+			justify-content: space-around;
+		}
 	}
 }
 </style>
