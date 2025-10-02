@@ -1,4 +1,6 @@
 ---
+import Icon from '@components/FABrandIcon.astro';
+
 const TODAY = new Date(Date.now());
 const CURRENT_YEAR = TODAY.getFullYear();
 const USER_NAME = 'Wolfsrudel LLC';
@@ -10,13 +12,17 @@ const LINKS = [
 ];
 
 const SOCIALS = [
-	
+	{alt: 'Instagram Page', iconName: 'faInstagram', url: 'https://instagram.com/wolfsrudelusa'},
+	{alt: 'Facebook Page', iconName: 'faFacebook', url: 'https://facebook.com/wolfsrudelusa'},
+	{alt: 'Linkedin Page', iconName: 'faLinkedin', url: 'https://linkedin.com/company/wolfsrudelusa'},
+	{alt: 'Linkedin Page', iconName: 'faPaypal', url: 'https://paypal.com/seller/form/Oj0ffao9mD'},
 ];
 ---
 
 <footer>
 	<section>
 		<h3>Wolfsrudel LLC</h3>
+		<div>{SOCIALS.map(({iconName, url}) => <a href={url}><Icon name={iconName} class="fa-xl" style="margin: 0 4px" /></a>)}</div>
 	</section>
 	<section>
 		{LINKS.map(({name, url}) => <a href={url}>{name}</a>)}
@@ -38,7 +44,7 @@ footer {
 		display: flex;
 		flex-flow: column wrap;
 		align-content: space-around;
-		&> a {
+		a {
 			text-decoration: none;
 			color: inherit;
 			&:hover {
@@ -49,7 +55,7 @@ footer {
 	@media only screen and (min-width: theme.$breakpoint-desktop) {
 		section {
 			flex-flow: row wrap;
-			justify-content: space-around;
+			justify-content: space-between;
 		}
 	}
 }
