@@ -1,5 +1,6 @@
 ---
 import Link from '@components/HeaderLink.astro';
+import Logo from '@components/LogoBanner.astro';
 
 const navLinks = [
 	{name: 'Home', url: '/'},
@@ -8,10 +9,7 @@ const navLinks = [
 ---
 
 <header>
-	<div id="logo-banner">
-		<img src="favicon.svg" />
-		<h1>Wolfsrudel LLC</h1>
-	</div>
+	<Logo dynamic={false} />
 	<nav>
 		{navLinks.map(link => <Link url={link.url} name={link.name} />)}
 	</nav>
@@ -27,22 +25,6 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	background-color: theme.get-color('background');
-	#logo-banner {
-		display: flex;
-		align-items: center;
-		padding: 4px;
-		&> * {
-			margin: 0 4px;
-		}
-		img {
-			width: $banner-height;
-			height: $banner-height;
-		}
-		h1 {
-			display: none;
-			font-size: theme.$base-font-size;
-		}
-	}
 	nav {
 		color: theme.get-color('default');
 		display: flex;
@@ -52,9 +34,7 @@ header {
 		align-items: stretch;
 	}
 	@media only screen and (min-width: theme.$breakpoint-desktop) {
-		#logo-banner h1 {
-			display: inline-block;
-		}
+
 	}
 }
 </style>
