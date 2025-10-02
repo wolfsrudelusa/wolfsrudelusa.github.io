@@ -8,7 +8,10 @@ const navLinks = [
 ---
 
 <header>
-	<img src="favicon.svg" />
+	<div id="logo-banner">
+		<img src="favicon.svg" />
+		<h1>Wolfsrudel LLC</h1>
+	</div>
 	<nav>
 		{navLinks.map(link => <Link url={link.url} name={link.name} />)}
 	</nav>
@@ -16,14 +19,29 @@ const navLinks = [
 
 <style lang="scss">
 @use '@assets/styles' as theme;
+$banner-height: 48px;
+
 header {
 	padding: 0 12px;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	background-color: theme.get-color('background');
-	img {
-		width: 14px;
-		height: 14px;
+	#logo-banner {
+		display: flex;
+		align-items: center;
+		padding: 4px;
+		&> * {
+			margin: 0 4px;
+		}
+		img {
+			width: $banner-height;
+			height: $banner-height;
+		}
+		h1 {
+			display: none;
+			font-size: theme.$base-font-size;
+		}
 	}
 	nav {
 		color: theme.get-color('default');
@@ -32,6 +50,11 @@ header {
 		padding: 0 8px;
 		justify-content: center;
 		align-items: stretch;
+	}
+	@media only screen and (min-width: theme.$breakpoint-desktop) {
+		#logo-banner h1 {
+			display: inline-block;
+		}
 	}
 }
 </style>

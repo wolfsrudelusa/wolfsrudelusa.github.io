@@ -2,15 +2,14 @@
 @use 'reset' as *;
 @use 'index' as *;
 @use 'typography' as *;
+@use 'variables' as *;
 
 body {
 	display: flex;
 	flex-flow: column nowrap;
 	min-height: 100vh;
-	/* background: radial-gradient(farthest-corner at 0px 100%, #10115b, transparent, #5b103b),
-	radial-gradient(farthest-corner at 100% 0px, #5b103b, transparent, #10115b),
-	black; */
-	background-color: #0D1117;
+	color: get-color('default');
+	background-color: get-color('default', 2);
 }
 
 .section {
@@ -128,16 +127,3 @@ nav > button {
 nav > button:hover {
 	background-color: rgba(0, 0, 0, 0.25);
 }
-
-/* #copy { padding-left: 24em; text-align: center; } */
-/* #site_foot {
-	position: fixed;
-	left: 0; bottom: 0;
-	width: 100%;
-	background: linear-gradient(#efefef, #ffffff);
-	box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
-	padding: 0.5% 0;
-	display: flex; flex-direction: row;
-	justify-content: center; align-items: center;
-	font-weight: 600;
-}*/

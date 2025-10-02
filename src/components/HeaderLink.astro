@@ -21,8 +21,10 @@ const { name, url } = Astro.props;
 	padding: 1vh;
 	color: inherit;
 	transition: all ease-in 100ms;
-	&:hover, &.active {
-		background: linear-gradient(transparent 90%, #fff);
+	// &.active,
+	&:hover {
+		color: theme.get-color('foreground')
+		//background: linear-gradient(transparent 90%, #fff);
 	}
 }
 </style>
