@@ -17,6 +17,8 @@
 	},
 	"dependencies": {
 		"@astrojs/sitemap": "latest",
+		"@fortawesome/fontawesome-svg-core": "latest",
+		"@fortawesome/free-brands-svg-icons": "latest",
 		"@vite-pwa/astro": "latest",
 		"astro": "latest"
 	},
