@@ -12,8 +12,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: ghpages-cicd
+  cancel-in-progress: true
 
 env:
   BUILD_PATH: .
