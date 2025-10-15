@@ -14,17 +14,21 @@ const { name, url } = Astro.props;
 	display: block;
 	flex: 0 0 12ch;
 	font-family: theme.$sans-font;
-	font-size: 14pt;
+	font-size: 12pt;
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
-	padding: 1vh;
+	padding: 4px;
 	color: inherit;
 	transition: all ease-in 100ms;
 	// &.active,
 	&:hover {
 		color: theme.get-color('foreground')
 		//background: linear-gradient(transparent 90%, #fff);
+	}
+	@media only screen and (min-width: theme.$breakpoint-large) {
+		padding: 8px;
+		font-size: 14pt;
 	}
 }
 </style>
