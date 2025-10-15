@@ -8,6 +8,7 @@ body {
 	display: flex;
 	flex-flow: column nowrap;
 	min-height: 100vh;
+	width: 100%;
 	color: get-color('default');
 	background-color: get-color('default', 2);
 }

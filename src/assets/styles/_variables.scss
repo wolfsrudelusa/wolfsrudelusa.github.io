@@ -12,4 +12,7 @@ $colors: (
 	@return list.nth(map.get($colors, $domain), $n *(if($light-theme, 1, -1)));
 }
 
-$breakpoint-desktop: 50em;
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
