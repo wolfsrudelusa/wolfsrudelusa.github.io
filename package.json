@@ -13,19 +13,21 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "vitest"
 	},
 	"dependencies": {
 		"@astrojs/sitemap": "latest",
 		"@fortawesome/fontawesome-svg-core": "latest",
 		"@fortawesome/free-brands-svg-icons": "latest",
 		"@vite-pwa/astro": "latest",
-		"astro": "latest"
+		"astro": "latest",
+		"sass": "latest",
+		"typescript": "latest"
 	},
 	"devDependencies": {
 		"@astrojs/check": "latest",
+		"@playwright/test": "latest",
 		"@types/node": "latest",
-		"sass": "latest",
-		"typescript": "latest"
+		"vitest": "latest"
 	}
 }

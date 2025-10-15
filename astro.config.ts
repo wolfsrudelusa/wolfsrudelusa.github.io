@@ -1,12 +1,16 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import pwa from '@vite-pwa/astro';
+
+import PROJECT_CONFIG from './project.config.ts';
 
 // https://astro.build/config
 export default defineConfig({
-	site: process.env.SITE_URL,
-	integrations: [sitemap()],
+	site: `${PROJECT_CONFIG.site}:${PROJECT_CONFIG.port}`,
+	base: PROJECT_CONFIG.base,
+	integrations: [sitemap(), pwa()],
 	server: {
-		port: Number(process.env.PORT ?? 8080),
+		port: PROJECT_CONFIG.port,
 		host: true,
 	},
 	vite: {
