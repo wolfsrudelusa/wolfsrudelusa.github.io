@@ -23,10 +23,10 @@ const SOCIALS = [
 <footer>
 	<section>
 		<Logo size="small" />
-		<div id="socials">{SOCIALS.map(({iconName, url}) => <a href={url}><Icon name={iconName} class="fa-xl" style="margin: 0 4px" /></a>)}</div>
+		<div id="socials">{SOCIALS.map(({iconName, url, alt}) => <a href={url} aria-label={alt}><Icon name={iconName} class="fa-xl" style="margin: 0 4px" /></a>)}</div>
 	</section>
 	<section>
-		{LINKS.map(({name, url}) => <a href={url}>{name}</a>)}
+		{LINKS.map(({name, url}) => <a href={url} aria-label={name}>{name}</a>)}
 	</section>
 	<section>
 		<p><small>&copy; {CURRENT_YEAR} {COMPANY_NAME}</small> | <small>Last updated <time datetime={`${TODAY.getUTCFullYear()}-${TODAY.getUTCMonth()+1}-${TODAY.getUTCDay()+1}`}>{TODAY.toLocaleDateString('en',{year:'numeric',month:'short',day:'numeric'})}</time></small></p>

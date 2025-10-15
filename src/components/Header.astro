@@ -11,20 +11,22 @@ const navLinks = [
 <header>
 	<Logo dynamic={false} />
 	<nav>
-		{navLinks.map(link => <Link url={link.url} name={link.name} />)}
+		{navLinks.map(link => <Link url={link.url} name={link.name} aria-label={link.name} />)}
 	</nav>
 </header>
 
 <style lang="scss">
+@use 'sass:color';
 @use '@assets/styles' as theme;
 $banner-height: 48px;
 
 header {
-	padding: 0 12px;
+	padding: 0 12px 4px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	background-color: theme.get-color('background');
+	border-bottom: 1px solid color.adjust(theme.get-color('default'), $lightness: -50%);
 	nav {
 		color: theme.get-color('default');
 		display: flex;
