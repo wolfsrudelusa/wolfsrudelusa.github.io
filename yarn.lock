@@ -1404,6 +1404,27 @@
     "@parcel/watcher-win32-ia32" "2.5.1"
     "@parcel/watcher-win32-x64" "2.5.1"
 
+"@playwright/browser-chromium@^1.56.0":
+  version "1.56.0"
+  resolved "https://registry.yarnpkg.com/@playwright/browser-chromium/-/browser-chromium-1.56.0.tgz#c7cf44daa13f0fe6233f4bd5e64736325441ff7a"
+  integrity sha512-+OABx0PwbzoWXO5qOmonvQlIZq0u89XpDkRYf+ZTOs+wsI3r/NV90rzGr8nsJZTj7o10tdPMmuGmZ3OKP9ag4Q==
+  dependencies:
+    playwright-core "1.56.0"
+
+"@playwright/browser-firefox@^1.56.0":
+  version "1.56.0"
+  resolved "https://registry.yarnpkg.com/@playwright/browser-firefox/-/browser-firefox-1.56.0.tgz#09bb5caa035dfc4b812f790014b90414a06111da"
+  integrity sha512-Jygr+YpaCPTASG/DOXUruaKJQf+nzTNvOR2GVGt5jgp7brc6GPRtXGZeTMErNyE5Txy7NyPfcAL8PAPTx2R9Dg==
+  dependencies:
+    playwright-core "1.56.0"
+
+"@playwright/browser-webkit@^1.56.0":
+  version "1.56.0"
+  resolved "https://registry.yarnpkg.com/@playwright/browser-webkit/-/browser-webkit-1.56.0.tgz#d79243d9d74813e469410a1560be4e4e5a986d25"
+  integrity sha512-ylyZZtX2x6YngGfkk/9bo0YngHvI8L3ChLoc/7e9VPN82up+POniNenYEJm3LBTO1vSg0hCagKzX/u+Bn73GGg==
+  dependencies:
+    playwright-core "1.56.0"
+
 "@playwright/test@^1.56.0":
   version "1.56.0"
   resolved "https://registry.yarnpkg.com/@playwright/test/-/test-1.56.0.tgz#891fe101bddf3eee3dd609e7a145f705dc0f3054"
@@ -5644,7 +5665,7 @@ vitefu@^1.1.1:
   resolved "https://registry.yarnpkg.com/vitefu/-/vitefu-1.1.1.tgz#c39b7e4c91bf2f6c590fb96e0758f394dff5795b"
   integrity sha512-B/Fegf3i8zh0yFbpzZ21amWzHmuNlLlmJT6n7bu5e+pCHUKQIfXSYokrqOBGEMMe9UG2sostKQF9mml/vYaWJQ==
 
-vitest@^3.2.4:
+vitest@latest:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/vitest/-/vitest-3.2.4.tgz#0637b903ad79d1539a25bc34c0ed54b5c67702ea"
   integrity sha512-LUCP5ev3GURDysTWiP47wRRUpLKMOfPh+yKTx3kVIEiu5KOMeqzpnYNsKyOoVrULivR8tLcks4+lga33Whn90A==

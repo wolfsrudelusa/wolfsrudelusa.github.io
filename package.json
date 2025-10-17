@@ -26,6 +26,9 @@
 	},
 	"devDependencies": {
 		"@astrojs/check": "latest",
+		"@playwright/browser-chromium": "latest",
+		"@playwright/browser-firefox": "latest",
+		"@playwright/browser-webkit": "latest",
 		"@playwright/test": "latest",
 		"@types/node": "latest",
 		"vitest": "latest"
