@@ -1,6 +1,9 @@
-$mono-font: 'Courier New', Courier, monospace !default;
-$sans-font: Arial, Helvetica, sans-serif !default;
-$serif-font: Georgia, 'Times New Roman', Times, serif !default;
+@use 'sass:math';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&family=IBM+Plex+Serif&display=swap');
+
+$mono-font: 'IBM Plex Mono', 'Courier New', Courier, monospace !default;
+$sans-font: 'IBM Plex Sans', Arial, Helvetica, sans-serif !default;
+$serif-font: 'IBM Plex Serif', Georgia, 'Times New Roman', Times, serif !default;
 
 $base-font-size: 1rem !default;
 $base-line-height: 1.6 !default;
@@ -18,6 +21,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 h4, h6 {
 	font-style: italic;
+}
+
+@for $i from 1 through 6 {
+	h#{i} {
+		font-size: $base-font-size + 0.125*math.round(0.1607*math.pow($i,2)-2.754*$i+10.7);
+		line-height: $base-line-height - (6 - $i * 0.1);
+	}
 }
 
 // Body content
@@ -53,6 +63,7 @@ ol ol ol ol { list-style: lower-alpha; }
 pre, code, samp { font-family: $mono-font !important; }
 pre {
 	font-size: 0.875rem;
+	// padding: $padding * 2;
 	overflow: auto;
 }
 pre code {
@@ -62,8 +73,21 @@ pre code {
 	padding: 0;
 }
 code {
+	// background-color: $silver;
 	border-radius: 3px;
 	font-size: 0.875rem;
 	padding: 0.15em 0.4em;
 }
 hr { border: 0; }
+
+//====================================================
+//  Font Sizing
+//====================================================
+
+.fs-base    { font-size: $base-font-size; }
+.fs-xsmall  { font-size: 50%; }
+.fs-small   { font-size: 75%; }
+.fs-large   { font-size: 125%; }
+.fs-xlarge  { font-size: 150%; }
+.fs-xxlarge { font-size: 175%; }
+.fs-double  { font-size: 200%; }

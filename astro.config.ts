@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import pwa from '@vite-pwa/astro';
 
@@ -8,7 +9,7 @@ import PROJECT_CONFIG from './project.config.ts';
 export default defineConfig({
 	site: `${PROJECT_CONFIG.site}:${PROJECT_CONFIG.port}`,
 	base: PROJECT_CONFIG.base,
-	integrations: [sitemap(), pwa()],
+	integrations: [mdx(), sitemap(), pwa()],
 	server: {
 		port: PROJECT_CONFIG.port,
 		host: true,

@@ -4,12 +4,15 @@
 $light-theme: false;
 $colors: (
 	default: (#000, #fff),
-	foreground: (#000, #0000ff, #fff),
-	background: (#fff, #808080, #000),
+	foreground: (#0445f1, #0494f1, #81ccfa),
+	background: (#eff2f5, #2e3a44, #151f26),
 );
 
 @function get-color($domain, $n: 1) {
 	@return list.nth(map.get($colors, $domain), $n *(if($light-theme, 1, -1)));
 }
 
-$breakpoint-desktop: 50em;
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
