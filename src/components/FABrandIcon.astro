@@ -1,0 +1,20 @@
+---
+import { icon } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import * as BrandIcons from '@fortawesome/free-brands-svg-icons';
+
+interface Props {
+	name: string;
+	class?: string;
+	[key: string]: any;
+}
+
+const { class: className, name: iconName, ...rest } = Astro.props;
+
+const iconHtml = icon(BrandIcons[iconName], {
+	attributes: rest,
+	classes: Array.from(new Set(className?.split(' ')))
+}).html;
+---
+
+<Fragment set:html={iconHtml} {...rest} />

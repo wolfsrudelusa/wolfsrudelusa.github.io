@@ -13,14 +13,22 @@ const { name, url } = Astro.props;
 .navLink {
 	display: block;
 	flex: 0 0 12ch;
-	font-size: 14pt;
+	font-family: theme.$sans-font;
+	font-size: 12pt;
+	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
-	padding: 1vh;
-	font-weight: bold;
+	padding: 4px;
+	color: inherit;
 	transition: all ease-in 100ms;
-	&:hover, &.active {
-		background: linear-gradient(transparent 90%, theme.get-color('background'););
+	// &.active,
+	&:hover {
+		color: theme.get-color('foreground')
+		//background: linear-gradient(transparent 90%, #fff);
+	}
+	@media only screen and (min-width: theme.$breakpoint-large) {
+		padding: 8px;
+		font-size: 14pt;
 	}
 }
 </style>

@@ -1,29 +1,42 @@
 ---
 import Link from '@components/HeaderLink.astro';
+import Logo from '@components/LogoBanner.astro';
 
 const navLinks = [
 	{name: 'Home', url: '/'},
+	{name: 'Contact Us', url: 'https://www.paypal.com/seller/form/Oj0ffao9mD'},
 ];
 ---
 
 <header>
+	<Logo dynamic={false} />
 	<nav>
-		{navLinks.map(link => <Link url={link.url} name={link.name} />)}
+		{navLinks.map(link => <Link url={link.url} name={link.name} aria-label={link.name} />)}
 	</nav>
 </header>
 
 <style lang="scss">
+@use 'sass:color';
 @use '@assets/styles' as theme;
+$banner-height: 48px;
+
 header {
-	color: theme.get-color('default');
+	padding: 0 12px 4px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	background-color: theme.get-color('background');
-	padding: 0 12px;
+	border-bottom: 1px solid color.adjust(theme.get-color('default'), $lightness: -50%);
 	nav {
+		color: theme.get-color('default');
 		display: flex;
 		font: 1em sans-serif;
 		padding: 0 8px;
 		justify-content: center;
 		align-items: stretch;
+	}
+	@media only screen and (min-width: theme.$breakpoint-large) {
+
 	}
 }
 </style>
