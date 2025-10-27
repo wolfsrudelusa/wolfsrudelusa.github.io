@@ -1,0 +1,59 @@
+---
+import CompanyLogo from '@assets/icons/wolfsrudel-logo.svg';
+
+const COMPANY_NAME = 'Wolfsrudel LLC';
+
+interface Props {
+	size?: 'small' | 'normal';
+	dynamic?: boolean;
+	[key: string]: any;
+}
+
+const { size='normal', dynamic=true, ...rest } = Astro.props;
+---
+
+<div {...rest}>
+	<CompanyLogo id="icon" class:list={[size]} />
+	<h3 id="title" class:list={[dynamic ? 'fold' : 'hide']}>{COMPANY_NAME}</h3>
+</div>
+
+<style lang="scss">
+@use '@assets/styles' as theme;
+$small-height: 36px;
+$normal-height: 32pt;
+
+div {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	padding: 4px;
+	&> * {
+		margin: 0 4px;
+	}
+	#icon {
+		min-width: $normal-height;
+		min-height: $normal-height;
+		width: $normal-height;
+		height: $normal-height;
+		&.small {
+			min-width: $small-height;
+			min-height: $small-height;
+			width: $small-height;
+			height: $small-height;
+		}
+	}
+	#title {
+		font-size: theme.$base-font-size;
+		text-transform: uppercase;
+		&.hide {
+			display: none;
+		}
+	}
+	@media only screen and (min-width: theme.$breakpoint-large) {
+		flex-flow: row nowrap;
+		#title.hide {
+			display: inline-block;
+		}
+	}
+}
+</style>
