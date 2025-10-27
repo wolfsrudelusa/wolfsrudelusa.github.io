@@ -1,8 +1,8 @@
 {
-	"name": "@<user_or_org>/<repo_name>",
+	"name": "wolfsrudelusa.github.io",
 	"version": "1.0.0",
-	"author": "<user_or_org>",
-	"repository": "https://github.com/<user_or_org>/<repo_name>",
+	"author": "wolfsrudelusa",
+	"repository": "https://github.com/wolfsrudelusa/wolfsrudelusa.github.io",
 	"license": "MIT",
 	"type": "module",
 	"private": true,
