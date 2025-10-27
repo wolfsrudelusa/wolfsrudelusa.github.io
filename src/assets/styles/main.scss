@@ -1,0 +1,10 @@
+@charset 'UTF-8';
+@use 'index' as *;
+@use 'typography' as *;
+
+body {
+	display: flex;
+	flex-flow: column nowrap;
+	min-height: 100vh;
+	background-color: get-color('background');
+}
