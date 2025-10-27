@@ -1,31 +1,34 @@
 {
 	"name": "wolfsrudelusa.github.io",
 	"version": "1.0.0",
-	"author": "wolfsrudelusa",
-	"repository": "https://github.com/wolfsrudelusa/wolfsrudelusa.github.io",
+	"author": "Wolfsrudel LLC",
+	"repository": "https://github.com/wolfsrudelusa/wolfsrudelusa.github.io.git",
 	"license": "MIT",
 	"type": "module",
 	"private": true,
 	"scripts": {
 		"dev": "astro dev",
+		"prestart": "astro build",
+		"start": "astro check && tsc --noEmit && astro preview",
 		"build": "astro build",
-		"precheck": "yarn build",
-		"check": "astro check && tsc --noEmit",
-		"prepreview": "yarn check",
 		"preview": "astro preview",
+		"astro": "astro",
 		"test": "vitest"
 	},
 	"dependencies": {
 		"@astrojs/sitemap": "latest",
+		"@fortawesome/fontawesome-svg-core": "latest",
+		"@fortawesome/free-brands-svg-icons": "latest",
+		"@astrojs/mdx": "latest",
 		"@vite-pwa/astro": "latest",
-		"astro": "latest"
+		"astro": "latest",
+		"sass": "latest",
+		"typescript": "latest"
 	},
 	"devDependencies": {
 		"@astrojs/check": "latest",
 		"@playwright/test": "latest",
 		"@types/node": "latest",
-		"sass": "latest",
-		"typescript": "latest",
 		"vitest": "latest"
 	}
 }

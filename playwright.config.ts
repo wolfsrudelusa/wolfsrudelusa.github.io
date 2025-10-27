@@ -12,7 +12,12 @@ export default defineConfig({
 	projects: [
 		{
 			name: 'chrome',
-			use: { ...devices['Desktop Chrome'] }
+			use: {
+				...devices['Desktop Chrome'],
+				launchOptions: {
+					executablePath: PROJECT_CONFIG.blinkPath
+				}
+			}
 		},
 		{
 			name: 'safari',
@@ -21,7 +26,7 @@ export default defineConfig({
 	],
 	webServer: {
 		command: 'yarn run preview',
-		url: PROJECT_CONFIG.fullSite(true),
+		url: `${PROJECT_CONFIG.fullSite(true)}`,
 		timeout: 120 * 1000,
 		reuseExistingServer: !process.env.CI
 	}
