@@ -12,7 +12,8 @@ const { name, url } = Astro.props;
 @use '@assets/styles' as theme;
 .navLink {
 	display: block;
-	flex: 0 0 12ch;
+	flex: 0 1 12ch;
+	min-width: 12ch;
 	font-family: theme.$sans-font;
 	font-size: 12pt;
 	font-weight: bold;
