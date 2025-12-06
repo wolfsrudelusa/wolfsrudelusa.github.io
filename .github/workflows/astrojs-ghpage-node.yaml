@@ -41,7 +41,7 @@ jobs:
         env:
           SITE_URL: "${{ steps.pages.outputs.origin }}"
           SITE_BASE: "${{ steps.pages.outputs.base_path }}"
-          GCAL_APPT_ID: "${{ var.GCAL_APPT_ID }}"
+          GCAL_APPT_ID: "${{ vars.GCAL_APPT_ID }}"
         run: |
           yarn astro build
         working-directory: ${{ env.BUILD_PATH }}
