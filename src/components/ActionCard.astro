@@ -1,0 +1,34 @@
+---
+export interface Props {
+	title?: string;
+	description?: string;
+	center?: boolean;
+	[key: string]: any;
+}
+
+const { title, description, center = false, ...rest } = Astro.props;
+---
+<article class:list={[{centered: center}]} {...rest}>
+	{title ? <h3>{title}</h3> : null}
+	{description ? <p>{description}</p> : null}
+	<slot />
+</article>
+
+<style lang="scss">
+@use '@assets/styles' as theme;
+article {
+	padding: 4px;
+	max-width: 48ch;
+	text-align: center;
+	h3 { font-weight: bold; }
+	@media only screen and (min-width: theme.$breakpoint-large) {
+		text-align: left;
+		max-width: 64ch;
+		h3 { font-size: 36pt; }
+		p { font-size: 14pt; }
+		&.centered {
+			text-align: center;
+		}
+	}
+}
+</style>
