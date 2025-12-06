@@ -1,13 +1,35 @@
 ---
 import Layout from '@layouts/Default.astro';
+import ActionCard from '@components/ActionCard.astro';
 
 const title = 'Home';
+
+const GCAL_APPT_ID = process.env.GCAL_APPT_ID;
 ---
 
 <Layout title={title}>
 <section>
-	<h2>COMING SOON</h2>
+	<ActionCard id="cta"
+		title="Welcome to the Future"
+		description="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.">
+		<!-- Google Calendar Appointment Scheduling begin -->
+		<script define:vars={{GCAL_APPT_ID}} is:inline>
+		(function() {
+			var target = document.currentScript;
+			window.addEventListener('load', function() {
+				calendar.schedulingButton.load({
+					url: `https://calendar.google.com/calendar/appointments/schedules/${GCAL_APPT_ID}`,
+					color: '#0494f1',
+					label: 'Schedule a Consultation'.toUpperCase(),
+					target,
+				});
+			});
+		})();
+		</script>
+		<!-- end Google Calendar Appointment Scheduling -->
+	</ActionCard>
 </section>
+<section></section>
 </Layout>
 
 <style>
@@ -15,8 +37,8 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	h2 {
-		padding: 48px;
+	#cta {
+		margin: 64px 0;
 	}
 }
 </style>
