@@ -16,10 +16,10 @@
 		"test": "vitest"
 	},
 	"dependencies": {
+		"@astrojs/mdx": "latest",
 		"@astrojs/sitemap": "latest",
 		"@fortawesome/fontawesome-svg-core": "latest",
 		"@fortawesome/free-brands-svg-icons": "latest",
-		"@astrojs/mdx": "latest",
 		"@vite-pwa/astro": "latest",
 		"astro": "latest",
 		"sass": "latest",
